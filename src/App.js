@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import {BrowserRouter} from 'react-router-dom';
+import {renderRoutes} from 'react-router-config';
+import routes from './routes';
+
 const App = props => {
-  return <h1>yo {props.name}</h1>
+  return (
+    renderRoutes(routes)
+  )
 }
 
 ReactDOM.render(
-  <App name="babel 7.0" />,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
